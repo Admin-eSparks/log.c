@@ -43,7 +43,7 @@ struct LogManagemnt
     bool std_quiet;                                /// @var Standard output quiet mode
     Callback callbacks[LOGC__MAX_CALLBACKS];       /// @var Log event callbacks list
 } LogManagemnt;
-static struct LogManagemnt L = {NULL, NULL, LOGC_TRACE, false, {0}};
+static struct LogManagemnt L = {NULL, NULL, LOGC_TRACE, false, {{0}}};
 
 static const char *level_strings[] = { "FATAL", "ERROR", "WARN", "INFO", "DEBUG", "TRACE" };
 
