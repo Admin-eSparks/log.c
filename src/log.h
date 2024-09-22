@@ -76,6 +76,9 @@ log_LogLevel;
 /// @return         String representing the corresponding log level
 const char *log_level_string(log_LogLevel level);
 
+/// @brief          Get the current log level as string
+/// @return         String representing the current log level
+const char *log_get_current_log_level_str(void);
 
 /// @brief          Set the process lock function
 /// @remark         The lock function is passed true to acquire the resource, false to release
@@ -94,6 +97,10 @@ void log_set_level(log_LogLevel level);
 ///                 Default to false
 /// @param enable   True to enable quiet mode, false to disable
 void log_set_quiet(bool enable);
+
+/// @brief					Check if log is set to quiet mode
+/// @retval					True if log is currently set to quiet mode, otherwise False.
+bool log_is_quiet_mode (void);
 
 /// @brief          Add a callback to the corresponding log events
 /// @remark         The callback function will be passed a log_Event structure when called

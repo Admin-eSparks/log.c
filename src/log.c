@@ -126,6 +126,11 @@ const char *log_level_string(log_LogLevel level)
     return level_strings[level];
 }
 
+const char *log_get_current_log_level_str(void)
+{
+	return level_strings[L.std_level];
+}
+
 void log_set_lock(log_LockFn fn, void *lock)
 {
     L.lock_fn = fn;
@@ -135,6 +140,11 @@ void log_set_lock(log_LockFn fn, void *lock)
 void log_set_level(log_LogLevel level)
 {
     L.std_level = level;
+}
+
+bool log_is_quiet_mode (void)
+{
+	return L.std_quiet;
 }
 
 void log_set_quiet(bool enable)
